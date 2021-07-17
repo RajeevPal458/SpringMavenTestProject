@@ -47,4 +47,16 @@
 		</plugins>
 	</build>
 
+	<distributionManagement>
+		<repository>
+			<id>deployment</id>
+			<name>Deployment</name>
+			<url>http://localhost:8081/nexus/content/repositories/nexusRepo/</url>
+		</repository>
+    <snapshotRepository>
+        <id>deployment</id>
+        <name>Deployment</name>
+        <url>http://15.206.166.202:8081/repository/all/</url>
+    </snapshotRepository>
+	
 </project>
