@@ -50,13 +50,13 @@
 	<distributionManagement>
 		<repository>
 			<id>deployment</id>
-			<name>Deployment</name>
+			<name>internal release</name>
 			<url>http://localhost:8081/nexus/content/repositories/nexusRepo/</url>
 		</repository>
 	
 		<snapshotRepository>
 			<id>deployment</id>
-			<name>Deployment</name>
+			<name>snapshot release</name>
 			<url>http://localhost:8081/nexus/content/repositories/nexusRepoSnap/</url>
 		</snapshotRepository>
 	</distributionManagement>
