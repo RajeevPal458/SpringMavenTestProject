@@ -57,7 +57,7 @@
 		<snapshotRepository>
 			<id>deployment</id>
 			<name>Deployment</name>
-			<url>http://15.206.166.202:8081/repository/all/</url>
+			<url>http://localhost:8081/nexus/content/repositories/nexusRepo/</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>
