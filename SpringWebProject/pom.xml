@@ -57,7 +57,7 @@
 		<snapshotRepository>
 			<id>deployment</id>
 			<name>snapshot release</name>
-			<url>http://localhost:8081/nexus/content/repositories/nexusRepoSnap/</url>
+			<url>http://localhost:8081/nexus/content/repositories/nexusSnap/</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>
