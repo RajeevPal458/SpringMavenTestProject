@@ -1,0 +1,163 @@
+ https://github.com/scmgalaxy
+ https://github.com/ValaxyTech/DevOpsDemos
+ sonar properties :  https://docs.sonarqube.org/latest/analysis/analysis-parameters/  target\classes   42baad8d3e83476944acc169a8f13abdc448d15f
+		https://www.youtube.com/watch?v=k-3krTRuAFA
+		https://www.youtube.com/watch?v=8IYtL8TDVL0
+		https://www.youtube.com/watch?v=BuT1Ji0P9Ug
+		https://github.com/rchidana/mvndemo
+		https://github.com/ValaxyTech/DevOpsDemos/blob/dev2/SonarQube/Sonar_Integration_with_Jenkins.MD
+
+# Required metadata
+sonar.projectKey=org.springframework.boot:spring-boot-starter-parent
+sonar.projectName=spring-boot-starter-parent
+sonar.projectVersion=1.0
+# Comma-separated paths to directories with sources (required)
+sonar.sources=SpringWebProject/src/main/java
+#sonar.profile=spring-boot-starter-parentProfile
+# Language
+sonar.language=java
+#sonar.profile=Weekend
+sonar.java.binaries=SpringWebProject/target/classes
+# Encoding of the source files
+sonar.sourceEncoding=UTF-8
+		
+		
+Git-- 
+		git config --global core.autocrlf false
+ 
+
+jenkins installations  --  
+user  :  RajeevPal
+Pass  : Jun@2021
+email : rajeevkumar.kp100@gmail.com
+
+install jeera   using docker-----------------00:50:00 time--
+docker pull cptactionhank/atlassian-jira
+docker run --detach --publish 8085:8080 cptactionhank/atlassian-jira:latest 
+email : rajeevkumar.kp100@gmail.com
+pass :  email pass   :  Rajiv@123
+site  :  rajpalmca
+https://jirapracticing.atlassian.net/browse/SAM-2   this domain also
+integrate jira with github 
+so download plugin 'git integration with jira' into jira from 'app' section
+then configure it going from manage app section
+
+
+
+install sonarqube --------01:12:00 time
+docker pull sonarqube
+docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
+user : admin  , password : Rajiv@123    ,  default password was  : admin 
+----------------------------------------------------------------------------------------------------------------------
+install  sonarqube scanner --- -------------1:20:00
+download sonarqube scanner 
+install 
+add java in sonar-scanner.properties and url of running sonar server
+cmd sonar project path $  path ........../sonar-scanner.bat  enter  to run scanner
+------------------------------------------------------------------------------------------------------------------------
+
+get all test project example from   https://github.com/scmgalaxy
+https://github.com/scmgalaxy/helloworld-java-maven  
+-------------------------------------------------------------------------------------------------------------------------
+install  nexus --------------------1:59:29  time ----------
+docker pull sonatype/nexus
+docker run -d -p 8081:8081 --name nexus sonatype/nexus:oss        if not found image so remove :oss
+acces it  8081/nexus
+nexus default  user :  admin  , password  : admin123
+user :  deployment
+pass :  deployment123
+http://localhost:8081/nexus/
+
+
+create repository inside nexus 
+configure this repo ur into maven  settings.xml  inside 
+<distributionManagement>
+		<repository>
+			<id>deployment</id>
+			<name>Deployment</name>
+			<url>http://localhost:8081/nexus/content/repositories/nexusRepo/</url>
+		</repository>
+<snapshotRepository>
+        <id>deployment</id>
+        <name>Deployment</name>
+        <url>http://15.206.166.202:8081/repository/all/</url>
+</snapshotRepository>
+
+and  add username and password inside  settings.xml  also
+inside 
+<servers>
+    <server>
+      <id>deployment</id>
+      <username>Deployment</username>
+      <password>deployment123</password>
+    </server>
+  </servers>
+---------------------------------------------------------------------------------------
+----------------------------------------- time 2:39:00
+now come to jenkins  install  locally 
+----------- time 2:39:00  creating new projects 
+
+create sonar project in jenins and add projects in jenkins from github 
+add sonarqube scanner plugin to jenkins 
+add sonarquber server into jenkins : manage jenkins -> configure-system
+snar authentication key :  http://localhost:9000/account/security/ generete security key  add into jenkins
+add  sonar scanner auto install versin 3.2.(Global tools configurations)
+
+---------------------------------------------------deploy build to nexus 2:55:00
+
+
+	
+
+development lifecycle -----
+sonarqube -> build -> UT -> package -> deploy two repo 
+
+
+---------------------------------------------------------------------------------------------------------------------------
+Configuration management tools  chef  puppet , ansible ----------------------------------------4:35:27
+Container based technology  (Docker) for deployments 
+Flow for Chef server ->
+
+user send request to chef server you execute through kniff 
+chef server wil get instruction to execute the 'cook books' this hve logic to copy the Artifact from thenexus 
+and keep this artifact in all other environments server places 
+
+check server , need to do knife configuration  , we need to have cook book  and nods 
+CHEF SERVER
+
+
+
+
+
+1)  manage.chef.io    go to this url 
+login  :  user :  rajpal  ,  password : Rajiv@123  , email : rajeevkumar.kp100@gmail.com
+
+create organization :    full name : rajeev kumar pal  , sort name : rajpalsingh   
+
+
+deployany app into tomcat using docker image dockerfile ------------------------7:30:00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
